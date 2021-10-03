@@ -1,0 +1,48 @@
+<%- include('./layout/Header') %> <%- include('./layout/Navbar') %>
+<section class="postlist">
+  <div class="container">
+    <% if (typeof userId !== 'undefined') { %>
+    <div class="track_prompt row">
+      <h1>Track Your Meal!</h1>
+      <a href="/add" class="track_button btn">+</a>
+    </div>
+    <% } %>
+    <div class="post">
+      <% data.forEach((post)=> { %>
+      <div class="post-card card mypost-card">
+        <h3 class="meal_display">
+          <span class="color-blue"><%= post.user_id %></span> ate
+          <span class="color-blue"><%= post.meal_name %></span>!
+        </h3>
+        <div class="stats_row">
+          <div>
+            <p>Calories: <%= post.calories %></p>
+            <p>Protein: <%= post.protein %>g</p>
+          </div>
+          <div>
+            <p>Carbs: <%= post.carbohydrates %>g</p>
+            <p>Fat: <%= post.fat %>g</p>
+          </div>
+          <form
+            action="/delete/<%= post.id %>?_method=DELETE"
+            method="post"
+            class="logo link-logo-delete"
+          >
+            <input type="hidden" name="_method" value="DELETE" />
+            <input
+              type="image"
+              src="/KitchenTable.png"
+              alt="submit"
+              id="submit-image"
+            />
+          </form>
+          <!-- <a href="/diary/delete/" class="logo link-logo-delete"
+            ><img src="/KitchenTable.png" alt="KitchenTable Logo"
+          /></a> -->
+        </div>
+      </div>
+      <%}) %>
+    </div>
+  </div>
+</section>
+<%- include('./layout/Footer') %>

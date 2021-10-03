@@ -1,0 +1,31 @@
+<%- include('./layout/Header') %> <%- include('./layout/Navbar') %>
+
+<section class="container">
+  <div class="card large_card">
+    <h1 class="input_title">Sign <span class="color-blue">in</span>!</h1>
+    <form action="/signin-check" method="post">
+      <div class="form_group">
+        <label for="user_id">Username:</label>
+        <input
+          type="text"
+          class="form_control credentials"
+          id="user_id"
+          name="user_id"
+        />
+      </div>
+      <div class="form_group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form_control credentials"
+          id="password"
+          name="password"
+        />
+      </div>
+      <div class="form_group">
+        <input type="submit" value="Sign in!" class="submit create_account" />
+      </div>
+    </form>
+  </div>
+</section>
+<%- include('./layout/Footer') %>

@@ -1,0 +1,35 @@
+<%- include('./layout/Header') %> <%- include('./layout/Navbar') %>
+
+<section class="container">
+  <div class="card large_card">
+    <h1 class="input_title">
+      Create your <span class="color-blue">account</span>!
+    </h1>
+    <form action="/register" method="post">
+      <div class="form_group">
+        <label for="user_id">Username:</label>
+        <input
+          type="text"
+          class="form_control credentials"
+          id="user_id"
+          name="user_id"
+        />
+      </div>
+      <div class="form_group">
+        <label for="password"
+          >Password: (Please do not use a real password on this site)</label
+        >
+        <input
+          type="password"
+          class="form_control credentials"
+          id="password"
+          name="password"
+        />
+      </div>
+      <div class="form_group">
+        <input type="submit" value="Create!" class="submit create_account" />
+      </div>
+    </form>
+  </div>
+</section>
+<%- include('./layout/Footer') %>

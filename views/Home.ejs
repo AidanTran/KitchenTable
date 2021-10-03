@@ -1,0 +1,20 @@
+<%- include('./layout/Header') %> <%- include('./layout/Navbar') %>
+<section class="home">
+  <div class="row container">
+    <div class="home_card card">
+      <h1 class="home__title">
+        Welcome to <span class="color-blue">KitchenTable</span>
+      </h1>
+      <div class="home__text">
+        <p>Share your food and track it too!</p>
+        <% if (typeof userId == 'undefined') { %>
+        <a href="/signup" class="home__btn btn">Sign Up</a>
+        <% } else {%>
+        <a href="/logout" class="home__btn btn">Log Out</a>
+        <% }%>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('./layout/Footer') %>

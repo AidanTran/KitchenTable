@@ -1,0 +1,73 @@
+<%- include('./layout/Header') %> <%- include('./layout/Navbar') %>
+
+<section class="container">
+  <div class="card large_card">
+    <h1 class="input_title">Track Your Meal!</h1>
+    <form action="/add-post" method="post">
+      <div class="form_group">
+        <label for="meal_name">Meal Name:</label>
+        <input
+          type="text"
+          class="form_control"
+          id="meal_name"
+          name="meal_name"
+        />
+      </div>
+      <div class="below_title_row">
+        <div>
+          <div class="form_group">
+            <label for="calories">Calories:</label>
+            <input
+              type="number"
+              class="form_control"
+              id="calories"
+              name="calories"
+              value="0"
+            />
+          </div>
+          <div class="form_group">
+            <label for="protein">Protein:</label>
+            <div class="grams_row">
+              <input
+                type="number"
+                class="form_control"
+                id="protein"
+                name="protein"
+                value="0"
+              />
+              <p>g</p>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="carbohydrates">Carbs:</label>
+            <div class="grams_row">
+              <input
+                type="number"
+                class="form_control"
+                id="carbohydrates"
+                name="carbohydrates"
+                value="0"
+              />
+              <p>g</p>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="fat">Fat:</label>
+            <div class="grams_row">
+              <input
+                type="number"
+                class="form_control"
+                id="fat"
+                name="fat"
+                value="0"
+              />
+              <p>g</p>
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="Track!" class="submit post_submit" />
+      </div>
+    </form>
+  </div>
+</section>
+<%- include('./layout/Footer') %>

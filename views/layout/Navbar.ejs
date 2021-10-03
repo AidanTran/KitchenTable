@@ -1,0 +1,26 @@
+<header>
+  <nav class="container row">
+    <a href="/" class="logo"
+      ><img src="/KitchenTable.png" alt="KitchenTable Logo"
+    /></a>
+    <ul class="nav__list row">
+      <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+      <li class="nav__item"><a href="/posts" class="nav__link">Posts</a></li>
+      <% if (typeof userId == 'undefined') { %>
+      <li class="nav__item not_signedin">
+        <a href="/signin" class="nav__link">Sign In</a>
+      </li>
+      <li class="nav__item not_signedin">
+        <a href="/signup" class="nav__link btn nav__link--button">Sign Up</a>
+      </li>
+      <% } else { %>
+      <li class="nav__item">
+        <a href="/myposts" class="nav__link">My Posts</a>
+      </li>
+      <li class="nav__item">
+        <a href="/logout" class="nav__link btn nav__link--button">Log Out</a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
