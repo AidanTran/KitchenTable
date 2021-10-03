@@ -15,8 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 //databaseurl
-const url =
-  "mongodb+srv://bulkywallnut:12345@chalkboard.htaea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const url = "removed for privacy";
 
 mongoose
   .connect(url, {
