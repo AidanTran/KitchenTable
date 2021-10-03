@@ -29,6 +29,12 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+input[type="text"],
+input[type="button"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
