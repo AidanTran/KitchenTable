@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const sessions = require("express-session");
-const cookieParser = require("cookie-parser");
 const methodOverride = require("method-override");
+const MemoryStore = require("memorystore")(sessions);
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -12,7 +12,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(methodOverride("_method"));
 
 //databaseurl
@@ -31,6 +30,9 @@ mongoose
 app.use(
   sessions({
     secret: "akljermnabsnmbkjchlkjh",
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
     resave: false,
     saveUninitialized: true,
     cookie: {
